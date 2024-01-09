@@ -101,9 +101,9 @@ WorldDef :: struct {
 	/// task system hookup
 	workerCount:            u32,
 	/// function to spawn task
-	enqueueTask:            ^EnqueueTaskCallback,
+	enqueueTask:            ^Enqueue_Task_Callback,
 	/// function to finish a task
-	finishTask:             ^FinishTaskCallback,
+	finishTask:             ^Finish_Task_Callback,
 	/// User context that is provided to enqueueTask and finishTask
 	userTaskContext:        rawptr,
 }

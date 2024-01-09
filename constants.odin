@@ -18,7 +18,7 @@ when true {
 	EPSILON :: math.F64_EPSILON
 }
 Color :: distinct la.Vector4f32
-
+HUGE_NUMBER :: 100000.0 * LENGTH_SCALE
 PI :: math.PI
 LENGTH_SCALE :: 1 // length-per-meter
 EPSILON_V2 :: Vector2{EPSILON, EPSILON}

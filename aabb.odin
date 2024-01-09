@@ -107,3 +107,15 @@ aabb_overlaps :: proc(box: AABB, other: AABB) -> bool {
 	// No separation found, the boxes overlap
 	return true
 }
+
+aabb_center :: proc(box: AABB) -> Vector2 {
+	return 0.5 * (box.upper_bound + box.lower_bound)
+}
+aabb_halfwidths :: proc(box: AABB) -> Vector2 {
+	return 0.5 * (box.upper_bound - box.lower_bound)
+}
+aabb_union :: proc(a: AABB, b: AABB) -> AABB {
+	lb := Vector2{min(a.lower_bound.x, b.lower_bound.x), min(a.lower_bound.y, b.lower_bound.y)}
+	ub := Vector2{max(a.upper_bound.x, b.upper_bound.x), max(a.upper_bound.y, b.upper_bound.y)}
+	return AABB{lb, ub}
+}

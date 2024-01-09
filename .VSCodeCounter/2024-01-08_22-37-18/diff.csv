@@ -1,0 +1,9 @@
+"filename", "language", "odin", "comment", "blank", "total"
+"c:\dev\box2o\__idk.odin", "odin", 73, 2, 4, 79
+"c:\dev\box2o\broad_phase.odin", "odin", 33, 19, 10, 62
+"c:\dev\box2o\geometry.odin", "odin", 57, 47, 33, 137
+"c:\dev\box2o\hull.odin", "odin", 7, 12, 4, 23
+"c:\dev\box2o\id.odin", "odin", 100, 2, 4, 106
+"c:\dev\box2o\idk.odin", "odin", -73, -2, -4, -79
+"c:\dev\box2o\ids.odin", "odin", -100, -2, -4, -106
+"Total", "-", 97, 78, 47, 222

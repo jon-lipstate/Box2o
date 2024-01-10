@@ -1,7 +1,17 @@
 package box2o
+import "core:intrinsics"
 import "core:math"
 import la "core:math/linalg"
 
+//todo PR this in after fixing bias stuff
+in_place_union :: proc(ba: ^Bit_Array, other: ^Bit_Array) {
+	iter := min(len(ba), len(other))
+	for i in 0 ..< iter {
+		ba.bits[i] |= other.bits[i]
+	}
+}
+
+debug_break :: intrinsics.debug_trap
 is_valid_flt :: #force_inline proc(flt: Float) -> bool {
 	if math.is_nan(flt) {return false}
 	if math.is_inf(flt) {return false}

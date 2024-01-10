@@ -51,14 +51,14 @@ Contact :: struct {
 	isMarked:      bool,
 }
 
-Initialize_Contact_Registers :: proc() {unimplemented()}
+initialize_contact_registers :: proc() {unimplemented()}
 
-Create_Contact :: proc(world: ^World, shapeA: ^Shape, shapeB: ^Shape) {unimplemented()}
-Destroy_Contact :: proc(world: ^World, contact: ^Contact) {unimplemented()}
+create_contact :: proc(world: ^World, shapeA: ^Shape, shapeB: ^Shape) {unimplemented()}
+destroy_contact :: proc(world: ^World, contact: ^Contact) {unimplemented()}
 
-Should_Shapes_Collide :: proc(filterA: Filter, filterB: Filter) -> bool {unimplemented()}
+should_shapes_collide :: proc(filterA: Filter, filterB: Filter) -> bool {unimplemented()}
 
-Update_Contact :: proc(
+update_contact :: proc(
 	world: ^World,
 	contact: ^Contact,
 	shapeA: ^Shape,

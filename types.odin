@@ -34,7 +34,7 @@ RayCast_Input :: struct {
 }
 
 /// Low level hape cast input in generic form
-ShapeCastInput :: struct {
+ShapeCast_Input :: struct {
 	points:      [MAX_POLYGON_VERTS]Vector2,
 	count:       i32,
 	radius:      Float,
@@ -43,7 +43,7 @@ ShapeCastInput :: struct {
 }
 
 /// Low level ray-cast or shape-cast output data
-CastOutput :: struct {
+Cast_Output :: struct {
 	normal:     Vector2,
 	point:      Vector2,
 	fraction:   Float,
@@ -72,7 +72,7 @@ Enqueue_Task_Callback :: #type proc(
 Finish_Task_Callback :: #type proc(userTask: rawptr, userContext: rawptr)
 
 /// World definition used to create a simulation world. Must be initialized using DefaultWorldDef.
-WorldDef :: struct {
+World_Def :: struct {
 	/// Gravity vector. Box2D has no up-vector defined.
 	gravity:                Vector2,
 	/// Restitution velocity threshold, usually in m/s. Collisions above this
@@ -129,7 +129,7 @@ DEFAULT_WORLD_DEF := World_Def {
 
 /// A body definition holds all the data needed to construct a rigid body.
 /// You can safely re-use body definitions. Shapes are added to a body after construction.
-BodyDef :: struct {
+Body_Def :: struct {
 	/// The body type: static, kinematic, or dynamic.
 	/// Note: if a dynamic body would have zero mass, the mass is set to one.
 	type:            Body_Type,
@@ -198,7 +198,7 @@ Filter :: struct {
 DEFAULT_FILTER := Filter{0x00000001, 0xFFFFFFFF, 0}
 
 /// This holds contact filtering data.
-QueryFilter :: struct {
+Query_Filter :: struct {
 	/// The collision category bits. Normally you would just set one bit.
 	categoryBits: u32,
 	/// The collision mask bits. This states the categories that this
@@ -207,7 +207,7 @@ QueryFilter :: struct {
 }
 
 /// Use this to initialize your query filter
-DEFAULT_QUERY_FILTER := QueryFilter{0x00000001, 0xFFFFFFFF}
+DEFAULT_QUERY_FILTER := Query_Filter{0x00000001, 0xFFFFFFFF}
 
 /// Shape type
 Shape_Type :: enum {
@@ -266,7 +266,7 @@ DEFAULT_SHAPE_DEF := Shape_Def {
 ///	- an open chain shape has NO COLLISION on the first and final edge
 ///	- you may overlap two open chains on their first three and/or last three points to get smooth collision
 ///	- a chain shape creates multiple hidden shapes on the body
-ChainDef :: struct {
+Chain_Def :: struct {
 	/// An array of at least 4 points. These are cloned and may be temporary.
 	points:      []Vector2,
 	/// Indicates a closed chain formed by connecting the first and last points
@@ -284,7 +284,6 @@ ChainDef :: struct {
 /// Use this to initialize your chain definition
 DEFAULT_CHAIN_DEF := Chain_Def {
 	nil, // points
-	0, // count
 	false, // loop
 	nil, // userData
 	0.6, // friction

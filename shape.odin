@@ -35,7 +35,7 @@ Chain_Shape :: struct {
 	object:       Object,
 	bodyIndex:    i32,
 	nextIndex:    i32,
-	shapeIndices: ^i32,
+	shapeIndices: [^]i32,
 	count:        i32,
 }
 
